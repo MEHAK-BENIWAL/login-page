@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login/Sign Up Page</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    backdrop-filter: blur(10px);
+  }
+
+  .container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 400px; /* Added max-width for better responsiveness */
+    width: 100%;
+  }
+
+  .form-group {
+    margin-bottom: 20px; /* Increased margin */
+  }
+
+  input {
+    padding: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #ff7e5f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Added margin */
+  }
+
+  button:hover {
+    background-color: #ff6b49;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div id="login" class="form-group">
+      <h2>Login</h2>
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button onclick="toggleForm()">Switch to Sign Up</button>
+    </div>
+    <div id="signup" class="form-group" style="display:none;">
+      <h2>Sign Up</h2>
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button onclick="toggleForm()">Switch to Login</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      var loginForm = document.getElementById("login");
+      var signupForm = document.getElementById("signup");
+
+      if (loginForm.style.display === "none") {
+        loginForm.style.display = "block";
+        signupForm.style.display = "none";
+      } else {
+        loginForm.style.display = "none";
+        signupForm.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
